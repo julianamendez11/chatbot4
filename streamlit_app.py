@@ -44,7 +44,7 @@ st.write(
 # via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
 
 # Create an OpenAI client.
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 # Create a session state variable to store the chat messages. This ensures that the
 # messages persist across reruns.
@@ -61,10 +61,10 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("What do you want to know about Cuesta Skills, Methodologies, Industry/Function Expertise??"):
 
     # Store and display the current prompt.
-    st.session_state.messages.append({"role": "user", "content": "Simon Lopera has worked in AWS and Power BI" + prompt})
+    st.session_state.messages.append({"role": "user", "content": "Simon Lopera skills: Tableau, Power BI. Data Visualization, Client Facing and Verbal and Writtren comunication" + prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
-
+        
     # Generate a response using the OpenAI API.
     stream = client.chat.completions.create(
         model="gpt-4o-mini",
